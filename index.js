@@ -2,9 +2,17 @@
 'use strict';
 
 const Input = require('./lib/input.js');
-const HTTP = require('./lib/http.js');
-const Notes = require('./lib/notes.js');
+// const HTTP = require('./lib/http.js');
+const Note = require('./lib/notes.js');
 
-const options = new Input();
+const input = new Input();
 
-HTTP.fetch(options);
+const command = new Note(input);
+// HTTP.fetch(options);
+
+input.valid() ? command.execute() : help();
+
+function help() {
+  console.log('Something went wrong!!!');
+  process.exit();
+}
