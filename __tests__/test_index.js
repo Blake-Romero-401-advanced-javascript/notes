@@ -46,12 +46,12 @@ describe('Input Module', () => {
     expect(command.payload).toBe('new note');
   });
 
-  it.skip('valid() respects a proper object', () => {
+  it('valid() respects a proper object', () => {
     let options = new Input();
     expect(options.valid()).toBeTruthy();
   });
 
-  it.skip('valid() rejects an invalid object', () => {
+  it('valid() rejects an invalid object', () => {
     let options = new Input();
     options.command = {}; // break it
     expect(options.valid()).toBeFalsy();
@@ -66,8 +66,15 @@ describe('Input Module', () => {
 //   })
 // })
 
-// describe('Note Module', () => {
-//   it('Check for command', () => {
+//Nothing is logged to console if no command given
+//cehck console log for proper performance
+describe('Note Module', () => {
+
+  it.skip('Check for command', () => {
     //what needs to be true for execute to work
-// })
-// })
+    // const spyWare = jest.spyOn(console, 'log');
+    let options = new Input();
+    let note = new Note();
+    expect(console.log).toHaveBeenCalledWith(`Adding Note: ${options.payload}`);
+})
+})
