@@ -7,10 +7,10 @@ const Note = require('./lib/notes.js');
 
 const input = new Input();
 
-const command = new Note(input);
+const note = new Note(input);
 // HTTP.fetch(options);
 
-input.valid() ? command.execute() : help();
+input.valid() ? note.execute() : help();
 
 function help() {
   console.log('Something went wrong!!!');
