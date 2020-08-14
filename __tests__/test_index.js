@@ -2,6 +2,7 @@
 
 jest.mock('minimist');
 const minimist = require('minimist');
+require('@code-fellows/supergoose');
 
 minimist.mockImplementation(() => {
   return {
@@ -19,16 +20,6 @@ test('proves that tests are alive', () => {
   expect(true).toBe(true);
 })
 
-// it('should do something', () => {
-//   const sum = 2 + 2;
-//   expect(sum).toBe(5);
-// })
-
-// test('parse should give us good command', () => {
-//   let input = Input();
-//   let command = input.parse({a: 'test'});
-//   expect(command.action).toBe('add');
-// })
 
 describe('Input Module', () => {
 
@@ -70,11 +61,19 @@ describe('Input Module', () => {
 //cehck console log for proper performance
 describe('Note Module', () => {
 
-  it.skip('Check for command', () => {
+  it.skip('Check for command?', () => {
     //what needs to be true for execute to work
     // const spyWare = jest.spyOn(console, 'log');
     let options = new Input();
     let note = new Note();
     expect(console.log).toHaveBeenCalledWith(`Adding Note: ${options.payload}`);
 })
+  it.skip('Check for note inside list after delete', () => {
+    let options = new Input();
+    let note = new Note();
+    let command = options.parse({ add: 'new note' });
+    //fake insert note, then delete it, and check inside list for life
+
+  })
+
 })
